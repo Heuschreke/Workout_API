@@ -1,0 +1,10 @@
+Metadata-Version: 2.4
+Name: fast-api-project
+Version: 0.1.0
+Summary: FastAPI проект для тренировок
+Author: Ваше Имя
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: fastapi>=0.104.0
+Requires-Dist: uvicorn>=0.24.0
+Requires-Dist: pydantic>=2.5.0
