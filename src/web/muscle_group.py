@@ -7,7 +7,7 @@ from dependencies import get_db
 
 router = APIRouter(prefix = "/muscle_group")
 
-@router.get("/", tags=["Группы мышц"], summary="Получить все упражнения", response_model=list[MuscleGroup])
+@router.get("/", tags=["Группы мышц"], summary="Получить все группы мышц", response_model=list[MuscleGroup])
 def get_all(db: Session = Depends(get_db)) -> list[MuscleGroup]:
     return service.get_all(db)
 

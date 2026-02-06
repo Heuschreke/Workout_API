@@ -9,6 +9,7 @@ class Workout(Base):
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, nullable=False)
     # created_at = Column(DateTime, default=datetime.datetime.utcnow)
+    exercises = relationship("Exercise", back_populates="workout")
     ass_exercises = relationship("AssExercise", back_populates="workout")
     user = relationship("User", back_populates="workouts")
     user_id = Column(Integer, ForeignKey("users.id"), nullable=False)

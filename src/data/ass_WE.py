@@ -12,7 +12,7 @@ class AssExercise(Base):
     exercise = relationship("Exercise", back_populates="ass_exercises")
     exercise_id = Column(Integer, ForeignKey("exercises.id"), nullable=False)
 
-    __table_args__ = (UniqueConstraint("workout_id", "exercise_id", name='uq_ass_exercise'))
+    __table_args__ = (UniqueConstraint("workout_id", "exercise_id", name='uq_ass_exercise'),)
 
     sets = Column(Integer, default=3)
     reps = Column(Integer, default=8)

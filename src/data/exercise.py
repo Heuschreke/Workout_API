@@ -13,6 +13,7 @@ class Exercise(Base):
     muscle_group = relationship("MuscleGroup", back_populates="exercises")
     workout_id = Column(Integer, ForeignKey("workouts.id"), nullable=True)
     workout = relationship("Workout", back_populates="exercises")
+    ass_exercises = relationship("AssExercise", back_populates="exercise")
 
     def __repr__(self):
         return "<Exercise {}>".format(self.name)

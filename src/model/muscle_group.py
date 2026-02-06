@@ -16,7 +16,7 @@ class ExerciseInMuscleGroup(BaseModel):
 class ExerciseUpdate(BaseModel):
     name: str | None
     description: str | None
-    muscle_group_id: str | None
+    muscle_group_id: int | None
 
 class Exercise(ExerciseBase):
     id: int
@@ -24,14 +24,13 @@ class Exercise(ExerciseBase):
 
 class MuscleGroupBase(BaseModel):
     name: str
-    exercises: list[ExerciseInMuscleGroup] = []
-
+    
 class MuscleGroupUpdate(MuscleGroupBase):
     name: str | None
-    exercises: list | None
 
 class MuscleGroupCreate(MuscleGroupBase):
     pass
 
 class MuscleGroup(MuscleGroupBase):
     id: int
+    exercises: list[ExerciseInMuscleGroup] = []

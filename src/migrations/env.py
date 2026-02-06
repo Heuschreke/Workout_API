@@ -1,10 +1,15 @@
 from logging.config import fileConfig
+import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from sqlalchemy import engine_from_config
 from sqlalchemy import pool
 
 from alembic import context
-from data import Exercise, Workout, User, MuscleGroup
+from data import Exercise, Workout, User, MuscleGroup, AssExercise
 from data.database import Base
 
 

@@ -27,9 +27,9 @@ def get_all(db: Session) -> list[Exercise]:
     return db.query(Exercise).all()
 
 def get_one(db: Session, exercise_id: int) -> Exercise | None:
-    return db.query(Exercise).filter(Exercise.id == exercise_id).filter()
+    return db.query(Exercise).filter(Exercise.id == exercise_id).first()
 
-def updade(db: Session, exercise_id: int, update_exercise: ExerciseUpdate) -> Exercise | None:
+def update(db: Session, exercise_id: int, update_exercise: ExerciseUpdate) -> Exercise | None:
     exercise_db = get_one(db, exercise_id)
     if not exercise_db:
         return None
